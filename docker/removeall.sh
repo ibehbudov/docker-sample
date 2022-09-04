@@ -8,3 +8,6 @@ docker system prune -a
 
 docker-compose build --no-cache &&
 docker-compose up -d --force-recreate 
+
+
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 
