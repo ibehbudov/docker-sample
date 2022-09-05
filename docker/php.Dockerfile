@@ -3,15 +3,23 @@ FROM php:8.1-fpm
 ARG user
 ARG uid
 
+
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     libpng-dev \
     libonig-dev \
     libxml2-dev \
-    libzip-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libmcrypt-dev \
+    libgd-dev \
+    jpegoptim optipng pngquant gifsicle \
+    libonig-dev \
+    libxml2-dev \
     zip \
-    unzip
 
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
 
